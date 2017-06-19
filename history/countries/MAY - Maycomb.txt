@@ -40,34 +40,36 @@ create_country_leader = {
 	expire = "1965.1.1"
 	ideology = liberalism
 	traits = {
+		good_shot
 	}
 }
 
-1939.1.1 = {
-	set_politics = {
+create_country_leader = {
+	name = "Nathan Radely"
+	desc = ""
+	picture = "RadelyMAY.dds"
+	expire = "1965.1.1"
+	ideology = rexism
+	traits = {
+	}
+}
 
-		parties = {
-			democratic = { 
-				popularity = 100
-			}
+create_country_leader = {
+	name = "Heck Tate"
+	desc = ""
+	picture = "HeckMAY.dds"
+	expire = "1965.1.1"
+	ideology = centrism
+	traits = {
+	}
+}
 
-			fascism = {
-				popularity = 0
-			}
-			
-			communism = {
-				popularity = 0
-				#banned = no #default is no
-			}
-		
-			neutrality = { 
-				popularity = 0
-			}
-		}
-	
-		ruling_party = neutrality
-		last_election = "1936.1.1"
-		election_frequency = 48
-		elections_allowed = no
+create_country_leader = {
+	name = "Maycomb General Council"
+	desc = ""
+	picture = "CouncilMAY.dds"
+	expire = "1965.1.1"
+	ideology = leninism
+	traits = {
 	}
 }

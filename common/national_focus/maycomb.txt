@@ -11,13 +11,16 @@ focus_tree = {
 	focus = {
 		id = robinson_v_ewell_case
 		icon = GFX_goal_generic_intelligence_exchange
-		cost = 0.00
+		cost = 10.00
 		x = 8
 		y = 0
+			completion_reward = {
+					add_national_unity = -0.20
+				}
 
 	}
 	focus = {
-		id = army_effort
+		id = MAY_army_effort
 		icon = GFX_goal_generic_allies_build_infantry
 		cost = 10.00
 		x = 19
@@ -36,7 +39,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = aviation_effort
+		id = MAY_aviation_effort
 		icon = GFX_goal_generic_build_airforce
 		cost = 10.00
 		x = 24
@@ -121,7 +124,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = naval_effort
+		id = MAY_naval_effort
 		icon = GFX_goal_generic_construct_naval_dockyard
 		cost = 10.00
 		x = 29
@@ -248,7 +251,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = industrial_effort
+		id = MAY_industrial_effort
 		icon = GFX_goal_generic_production
 		cost = 10.00
 		x = 35
@@ -285,7 +288,7 @@ focus_tree = {
 	focus = {
 		id = tom_is_innocent
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = robinson_v_ewell_case
 		}
@@ -295,34 +298,46 @@ focus_tree = {
 		}
 		x = 5
 		y = 1
+			completion_reward = {
+					add_national_unity = -0.15
+				}
 
 	}
 	focus = {
 		id = collectivist_maycomb
-		icon = GFX_goal_generic_support_communism
-		cost = 0.00
+		icon = GFX_focus_generic_join_comintern
+		cost = 10.00
 		prerequisite = {
 			focus = tom_is_innocent
 		}
+		mutually_exclusive = {
+			focus = free_maycomb
+		}
 		x = 3
 		y = 2
+			completion_reward = {
+					add_ideas = may_internationalism
+				}
 
 	}
 	focus = {
 		id = public_elections
 		icon = GFX_goal_generic_demand_territory
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = robinson_v_ewell_case
 		}
 		x = 11
 		y = 1
+			completion_reward = {
+					add_political_power = 150
+				}
 
 	}
 	focus = {
 		id = elect_a_socialist_council
 		icon = GFX_focus_generic_soviet_politics
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = collectivist_maycomb
 		}
@@ -331,23 +346,35 @@ focus_tree = {
 		}
 		x = 3
 		y = 4
+			completion_reward = {
+					set_politics = {
+							ruling_party = communism
+							elections_allowed = no
+						}
+				}
 
 	}
 	focus = {
 		id = free_maycomb
-		icon = GFX_goal_generic_support_democracy
-		cost = 0.00
+		icon = GFX_focus_generic_self_management
+		cost = 10.00
 		prerequisite = {
 			focus = tom_is_innocent
 		}
+		mutually_exclusive = {
+			focus = collectivist_maycomb
+		}
 		x = 5
 		y = 2
+			completion_reward = {
+					add_ideas = may_democratic
+				}
 
 	}
 	focus = {
 		id = reelect_atticus
 		icon = GFX_focus_generic_the_giant_wakes
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = free_maycomb
 		}
@@ -356,12 +383,18 @@ focus_tree = {
 		}
 		x = 5
 		y = 4
+			completion_reward = {
+					add_popularity = {
+							ideology = democratic
+							popularity = 0.2
+						}
+				}
 
 	}
 	focus = {
 		id = hung_jury
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = robinson_v_ewell_case
 		}
@@ -371,23 +404,30 @@ focus_tree = {
 		}
 		x = 7
 		y = 1
+			completion_reward = {
+					add_political_power = -75
+					add_national_unity = 0.10
+				}
 
 	}
 	focus = {
 		id = avoid_politics
 		icon = GFX_goal_generic_neutrality_focus
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = hung_jury
 		}
 		x = 7
 		y = 2
+			completion_reward = {
+					add_ideas = may_neutrality_focus
+				}
 
 	}
 	focus = {
 		id = elect_heck
 		icon = GFX_goal_generic_neutrality_focus
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = avoid_politics
 		}
@@ -396,12 +436,18 @@ focus_tree = {
 		}
 		x = 7
 		y = 4
+			completion_reward = {
+					set_politics = {
+							ruling_party = neutrality
+							elections_allowed = no
+						}
+				}
 
 	}
 	focus = {
 		id = tom_is_guilty
 		icon = GFX_goal_generic_forceful_treaty
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = robinson_v_ewell_case
 		}
@@ -414,23 +460,30 @@ focus_tree = {
 		}
 		x = 9
 		y = 1
+			completion_reward = {
+					add_political_power = 50
+					add_national_unity = 0.15
+				}
 
 	}
 	focus = {
 		id = endorse_racism
-		icon = GFX_goal_generic_support_fascism
-		cost = 0.00
+		icon = GFX_goal_generic_propaganda
+		cost = 10.00
 		prerequisite = {
 			focus = tom_is_guilty
 		}
 		x = 9
 		y = 2
+			completion_reward = {
+					add_ideas = may_nationalism
+				}
 
 	}
 	focus = {
 		id = elect_radely
 		icon = GFX_goal_generic_political_pressure
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = endorse_racism
 		}
@@ -439,12 +492,18 @@ focus_tree = {
 		}
 		x = 9
 		y = 4
+			completion_reward = {
+					set_politics = {
+							ruling_party = fascism
+							elections_allowed = no
+						}
+				}
 
 	}
 	focus = {
 		id = demand_alabama
 		icon = GFX_goal_continuous_suppression
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = elect_a_socialist_council
 			focus = reelect_atticus
@@ -453,10 +512,13 @@ focus_tree = {
 		}
 		x = 6
 		y = 5
+			completion_reward = {
+					transfer_state = 367
+				}
 
 	}
 	focus = {
-		id = equipment_effort
+		id = MAY_equipment_effort
 		icon = GFX_goal_generic_small_arms
 		cost = 10.00
 		prerequisite = {
@@ -477,7 +539,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = equipment_effort_2
+		id = MAY_equipment_effort_2
 		icon = GFX_goal_generic_army_artillery
 		cost = 10.00
 		prerequisite = {
@@ -498,7 +560,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = equipment_effort_3
+		id = MAY_equipment_effort_3
 		icon = GFX_goal_generic_army_artillery2
 		cost = 10.00
 		prerequisite = {
@@ -519,7 +581,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = doctrine_effort
+		id = MAY_doctrine_effort
 		icon = GFX_goal_generic_army_doctrines
 		cost = 10.00
 		prerequisite = {
@@ -540,7 +602,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = doctrine_effort_2
+		id = MAY_doctrine_effort_2
 		icon = GFX_goal_generic_army_doctrines
 		cost = 10.00
 		prerequisite = {
@@ -561,7 +623,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = motorization_effort
+		id = MAY_motorization_effort
 		icon = GFX_goal_generic_army_motorized
 		cost = 10.00
 		prerequisite = {
@@ -583,7 +645,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = mechanization_effort
+		id = MAY_mechanization_effort
 		icon = GFX_goal_generic_build_tank
 		cost = 10.00
 		prerequisite = {
@@ -603,7 +665,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = armor_effort
+		id = MAY_armor_effort
 		icon = GFX_goal_generic_army_tanks
 		cost = 10.00
 		prerequisite = {
@@ -623,7 +685,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = fighter_focus
+		id = MAY_fighter_focus
 		icon = GFX_goal_generic_air_fighter
 		cost = 10.00
 		prerequisite = {
@@ -652,7 +714,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = bomber_focus
+		id = MAY_bomber_focus
 		icon = GFX_goal_generic_air_bomber
 		cost = 10.00
 		prerequisite = {
@@ -678,7 +740,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = aviation_effort_2
+		id = MAY_aviation_effort_2
 		icon = GFX_goal_generic_air_doctrine
 		cost = 10.00
 		prerequisite = {
@@ -773,7 +835,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = CAS_effort
+		id = MAY_CAS_effort
 		icon = GFX_goal_generic_CAS
 		cost = 10.00
 		prerequisite = {
@@ -797,7 +859,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = flexible_navy
+		id = MAY_flexible_navy
 		icon = GFX_goal_generic_build_navy
 		cost = 10.00
 		prerequisite = {
@@ -836,7 +898,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = NAV_effort
+		id = MAY_NAV_effort
 		icon = GFX_goal_generic_air_naval_bomber
 		cost = 10.00
 		prerequisite = {
@@ -860,7 +922,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = large_navy
+		id = MAY_large_navy
 		icon = GFX_goal_generic_navy_doctrines_tactics
 		cost = 10.00
 		prerequisite = {
@@ -895,7 +957,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = submarine_effort
+		id = MAY_submarine_effort
 		icon = GFX_goal_generic_navy_submarine
 		cost = 10.00
 		prerequisite = {
@@ -932,7 +994,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = destroyer_effort
+		id = MAY_destroyer_effort
 		icon = GFX_goal_generic_wolf_pack
 		cost = 10.00
 		prerequisite = {
@@ -968,7 +1030,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = cruiser_effort
+		id = MAY_cruiser_effort
 		icon = GFX_goal_generic_navy_cruiser
 		cost = 10.00
 		prerequisite = {
@@ -1005,7 +1067,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = capital_ships_effort
+		id = MAY_capital_ships_effort
 		icon = GFX_goal_generic_navy_battleship
 		cost = 10.00
 		prerequisite = {
@@ -1048,7 +1110,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = construction_effort
+		id = MAY_construction_effort
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 10.00
 		prerequisite = {
@@ -1115,7 +1177,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = construction_effort_2
+		id = MAY_construction_effort_2
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 10.00
 		prerequisite = {
@@ -1182,7 +1244,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = infrastructure_effort
+		id = MAY_infrastructure_effort
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10.00
 		prerequisite = {
@@ -1273,7 +1335,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = rocket_effort
+		id = MAY_rocket_effort
 		icon = GFX_focus_rocketry
 		cost = 10.00
 		prerequisite = {
@@ -1304,7 +1366,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = infrastructure_effort_2
+		id = MAY_infrastructure_effort_2
 		icon = GFX_goal_generic_construct_infrastructure
 		cost = 10.00
 		prerequisite = {
@@ -1395,7 +1457,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = nuclear_effort
+		id = MAY_nuclear_effort
 		icon = GFX_focus_wonderweapons
 		cost = 10.00
 		prerequisite = {
@@ -1421,7 +1483,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = extra_tech_slot
+		id = MAY_extra_tech_slot
 		icon = GFX_focus_research
 		cost = 10.00
 		prerequisite = {
@@ -1436,7 +1498,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = production_effort
+		id = MAY_production_effort
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10.00
 		prerequisite = {
@@ -1503,7 +1565,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = production_effort_2
+		id = MAY_production_effort_2
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10.00
 		prerequisite = {
@@ -1570,7 +1632,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = production_effort_3
+		id = MAY_production_effort_3
 		icon = GFX_goal_generic_construct_mil_factory
 		cost = 10.00
 		prerequisite = {
@@ -1637,18 +1699,55 @@ focus_tree = {
 
 	}
 	focus = {
-		id = militarize_maycomb
+		id = MAY_militarize_maycomb
 		icon = GFX_goal_generic_construct_mil_factory
-		cost = 0.00
+		cost = 10.00
 		prerequisite = {
 			focus = demand_alabama
 		}
-		x = 6
+		x = 5
 		y = 6
+			completion_reward = {
+					random_owned_controlled_state = {
+							limit = {
+									free_building_slots = {
+											building = arms_factory
+											size > 0
+											include_locked = yes
+										}
+									OR = {
+											is_in_home_area = yes
+											NOT = {
+													owner = {
+															any_owned_state = {
+																	free_building_slots = {
+																			building = arms_factory
+																			size > 0
+																			include_locked = yes
+																		}
+																	is_in_home_area = yes
+																}
+														}
+												}
+										}
+								}
+							add_extra_state_shared_building_slots = 6
+							add_building_construction = {
+									type = arms_factory
+									level = 3
+									instant_build = yes
+								}
+							add_building_construction = {
+									type = industrial_complex
+									level = 3
+									instant_build = yes
+								}
+						}
+				}
 
 	}
 	focus = {
-		id = special_forces
+		id = MAY_special_forces
 		icon = GFX_goal_generic_special_forces
 		cost = 10.00
 		prerequisite = {
@@ -1679,7 +1778,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = construction_effort_3
+		id = MAY_construction_effort_3
 		icon = GFX_goal_generic_construct_civ_factory
 		cost = 10.00
 		prerequisite = {
@@ -1746,7 +1845,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = extra_tech_slot_2
+		id = MAY_extra_tech_slot_2
 		icon = GFX_focus_research
 		cost = 10.00
 		prerequisite = {
@@ -1766,7 +1865,7 @@ focus_tree = {
 
 	}
 	focus = {
-		id = secret_weapons
+		id = MAY_secret_weapons
 		icon = GFX_goal_generic_secret_weapon
 		cost = 10.00
 		prerequisite = {
@@ -1792,6 +1891,24 @@ focus_tree = {
 						}
 				}
 			available_if_capitulated = yes
+
+	}
+	focus = {
+		id = greater_maycomb
+		icon = GFX_focus_generic_military_mission
+		cost = 10.00
+		prerequisite = {
+			focus = demand_alabama
+		}
+		x = 7
+		y = 6
+			completion_reward = {
+					transfer_state = 365
+					transfer_state = 364
+					transfer_state = 366
+					transfer_state = 370
+					transfer_state = 371
+				}
 
 	}
 }
