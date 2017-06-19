@@ -1,0 +1,30 @@
+state={
+	id=743
+	name="Maycomb"
+	history={
+		owner = MAY
+		buildings = {
+			infrastructure = 6
+			industrial_complex = 3
+		}
+		add_core_of = MAY
+		victory_points = {
+			492 10 
+		}
+		1939.1.1 = {
+			buildings = {
+				industrial_complex = 4
+
+			}
+
+		}
+
+	}
+	
+	provinces={
+		492 
+	}
+	manpower=167865
+	buildings_max_level_factor=1.000
+	state_category=city
+}
