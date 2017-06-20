@@ -98,6 +98,23 @@ ideas = {
 	# Special ones that can be applied on other countries through focus system.
 	country = {
 		
+		mockingbird = {
+			
+			allowed = {
+				always = no
+			}
+
+
+			removal_cost = -1
+
+			picture = generic_democratic_drift_bonus
+
+			
+			modifier = {
+				democratic_drift = 0.05
+			}
+		}
+		
 		may_democratic = {
 			
 			
@@ -115,6 +132,7 @@ ideas = {
 			
 			modifier = {
 				democratic_drift = 0.05
+				justify_war_goal_time = 0.30
 			}
 		}
 		
